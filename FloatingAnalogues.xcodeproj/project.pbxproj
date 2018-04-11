@@ -12,6 +12,7 @@
 		1A91274E207E6E52001B815F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A91274C207E6E52001B815F /* Main.storyboard */; };
 		1A912750207E6E56001B815F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A91274F207E6E56001B815F /* Assets.xcassets */; };
 		1A912753207E6E56001B815F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A912751207E6E56001B815F /* LaunchScreen.storyboard */; };
+		1A91275B207E6E81001B815F /* AnalogueControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91275A207E6E81001B815F /* AnalogueControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		1A91274F207E6E56001B815F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A912752207E6E56001B815F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A912754207E6E56001B815F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A91275A207E6E81001B815F /* AnalogueControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogueControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				1A912748207E6E52001B815F /* AppDelegate.swift */,
 				1A91274A207E6E52001B815F /* ViewController.swift */,
+				1A91275A207E6E81001B815F /* AnalogueControl.swift */,
 				1A91274C207E6E52001B815F /* Main.storyboard */,
 				1A91274F207E6E56001B815F /* Assets.xcassets */,
 				1A912751207E6E56001B815F /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				1A91274B207E6E52001B815F /* ViewController.swift in Sources */,
 				1A912749207E6E52001B815F /* AppDelegate.swift in Sources */,
+				1A91275B207E6E81001B815F /* AnalogueControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

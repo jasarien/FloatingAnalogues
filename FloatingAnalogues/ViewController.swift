@@ -8,18 +8,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AnalogueControlDelegate {
 
+	@IBOutlet var leftAnalogueControl: AnalogueControl!
+	@IBOutlet weak var leftLabel: UILabel!
+	@IBOutlet var rightAnalogueControl: AnalogueControl!
+	@IBOutlet weak var rightLabel: UILabel!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		
+		leftAnalogueControl.delegate = self
+		rightAnalogueControl.delegate = self
 	}
-
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
+	
+	func analogueControl(_ analogControl: AnalogueControl, valueChanged value: CGPoint) {
+		switch analogControl {
+		case leftAnalogueControl:
+			leftLabel.text = String(format: "%.1f, %.1f", value.x, value.y)
+		case rightAnalogueControl:
+			rightLabel.text = String(format: "%.1f, %.1f", value.x, value.y)
+		default:
+			break
+		}
 	}
-
-
+	
 }
-
