@@ -59,13 +59,13 @@ class FloatingAnalogueViewController: UIViewController, AnalogueControlDelegate,
 	}
 	
 	func show(_ analogueControl: AnalogueControl) {
-		UIView.animate(withDuration: 0.2) {
+		UIView.animate(withDuration: 0.1) {
 			analogueControl.alpha = 1.0
 		}
 	}
 	
 	func hide(_ analogueControl: AnalogueControl) {
-		UIView.animate(withDuration: 0.2) {
+		UIView.animate(withDuration: 0.3) {
 			analogueControl.alpha = 0.0
 		}
 	}
