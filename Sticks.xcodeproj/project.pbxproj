@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		1A912749207E6E52001B815F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A912748207E6E52001B815F /* AppDelegate.swift */; };
-		1A91274B207E6E52001B815F /* FloatingAnaloagueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91274A207E6E52001B815F /* FloatingAnaloagueViewController.swift */; };
+		1A91274B207E6E52001B815F /* FloatingAnalogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91274A207E6E52001B815F /* FloatingAnalogsViewController.swift */; };
 		1A91274E207E6E52001B815F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A91274C207E6E52001B815F /* Main.storyboard */; };
 		1A912750207E6E56001B815F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A91274F207E6E56001B815F /* Assets.xcassets */; };
 		1A912753207E6E56001B815F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A912751207E6E56001B815F /* LaunchScreen.storyboard */; };
-		1A91275B207E6E81001B815F /* AnalogueControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91275A207E6E81001B815F /* AnalogueControl.swift */; };
+		1A91275B207E6E81001B815F /* AnalogControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91275A207E6E81001B815F /* AnalogControl.swift */; };
+		C629C26F208C63D0001F1EEA /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C629C26E208C63D0001F1EEA /* UIExtensions.swift */; };
+		C6642458208C04CB00E868CC /* ButtonControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6642457208C04CB00E868CC /* ButtonControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A912745207E6E52001B815F /* FloatingAnalogues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatingAnalogues.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A912745207E6E52001B815F /* Sticks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sticks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A912748207E6E52001B815F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1A91274A207E6E52001B815F /* FloatingAnaloagueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingAnaloagueViewController.swift; sourceTree = "<group>"; };
+		1A91274A207E6E52001B815F /* FloatingAnalogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingAnalogsViewController.swift; sourceTree = "<group>"; };
 		1A91274D207E6E52001B815F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A91274F207E6E56001B815F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A912752207E6E56001B815F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A912754207E6E56001B815F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A91275A207E6E81001B815F /* AnalogueControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogueControl.swift; sourceTree = "<group>"; };
+		1A91275A207E6E81001B815F /* AnalogControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogControl.swift; sourceTree = "<group>"; };
+		C629C26E208C63D0001F1EEA /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		C6642457208C04CB00E868CC /* ButtonControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +44,7 @@
 		1A91273C207E6E52001B815F = {
 			isa = PBXGroup;
 			children = (
-				1A912747207E6E52001B815F /* FloatingAnalogues */,
+				1A912747207E6E52001B815F /* Sticks */,
 				1A912746207E6E52001B815F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,31 +52,33 @@
 		1A912746207E6E52001B815F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A912745207E6E52001B815F /* FloatingAnalogues.app */,
+				1A912745207E6E52001B815F /* Sticks.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1A912747207E6E52001B815F /* FloatingAnalogues */ = {
+		1A912747207E6E52001B815F /* Sticks */ = {
 			isa = PBXGroup;
 			children = (
 				1A912748207E6E52001B815F /* AppDelegate.swift */,
-				1A91274A207E6E52001B815F /* FloatingAnaloagueViewController.swift */,
-				1A91275A207E6E81001B815F /* AnalogueControl.swift */,
+				1A91274A207E6E52001B815F /* FloatingAnalogsViewController.swift */,
+				1A91275A207E6E81001B815F /* AnalogControl.swift */,
+				C6642457208C04CB00E868CC /* ButtonControl.swift */,
+				C629C26E208C63D0001F1EEA /* UIExtensions.swift */,
 				1A91274C207E6E52001B815F /* Main.storyboard */,
 				1A91274F207E6E56001B815F /* Assets.xcassets */,
 				1A912751207E6E56001B815F /* LaunchScreen.storyboard */,
 				1A912754207E6E56001B815F /* Info.plist */,
 			);
-			path = FloatingAnalogues;
+			path = Sticks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1A912744207E6E52001B815F /* FloatingAnalogues */ = {
+		1A912744207E6E52001B815F /* Sticks */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A912757207E6E56001B815F /* Build configuration list for PBXNativeTarget "FloatingAnalogues" */;
+			buildConfigurationList = 1A912757207E6E56001B815F /* Build configuration list for PBXNativeTarget "Sticks" */;
 			buildPhases = (
 				1A912741207E6E52001B815F /* Sources */,
 				1A912742207E6E52001B815F /* Frameworks */,
@@ -82,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = FloatingAnalogues;
+			name = Sticks;
 			productName = FloatingAnalogues;
-			productReference = 1A912745207E6E52001B815F /* FloatingAnalogues.app */;
+			productReference = 1A912745207E6E52001B815F /* Sticks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -95,14 +101,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
-				ORGANIZATIONNAME = "James Addyman";
+				ORGANIZATIONNAME = "Provenance-Emu";
 				TargetAttributes = {
 					1A912744207E6E52001B815F = {
 						CreatedOnToolsVersion = 9.3;
 					};
 				};
 			};
-			buildConfigurationList = 1A912740207E6E52001B815F /* Build configuration list for PBXProject "FloatingAnalogues" */;
+			buildConfigurationList = 1A912740207E6E52001B815F /* Build configuration list for PBXProject "Sticks" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1A912744207E6E52001B815F /* FloatingAnalogues */,
+				1A912744207E6E52001B815F /* Sticks */,
 			);
 		};
 /* End PBXProject section */
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A91274B207E6E52001B815F /* FloatingAnaloagueViewController.swift in Sources */,
+				1A91274B207E6E52001B815F /* FloatingAnalogsViewController.swift in Sources */,
+				C629C26F208C63D0001F1EEA /* UIExtensions.swift in Sources */,
 				1A912749207E6E52001B815F /* AppDelegate.swift in Sources */,
-				1A91275B207E6E81001B815F /* AnalogueControl.swift in Sources */,
+				1A91275B207E6E81001B815F /* AnalogControl.swift in Sources */,
+				C6642458208C04CB00E868CC /* ButtonControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,13 +293,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 63497P68S6;
-				INFOPLIST_FILE = FloatingAnalogues/Info.plist;
+				DEVELOPMENT_TEAM = FE47VDP2YV;
+				INFOPLIST_FILE = "$(SRCROOT)/Sticks/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jamsoftonline.FloatingAnalogues;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sevdestruct.sticks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -303,13 +311,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 63497P68S6;
-				INFOPLIST_FILE = FloatingAnalogues/Info.plist;
+				DEVELOPMENT_TEAM = FE47VDP2YV;
+				INFOPLIST_FILE = "$(SRCROOT)/Sticks/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jamsoftonline.FloatingAnalogues;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sevdestruct.sticks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,7 +327,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1A912740207E6E52001B815F /* Build configuration list for PBXProject "FloatingAnalogues" */ = {
+		1A912740207E6E52001B815F /* Build configuration list for PBXProject "Sticks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A912755207E6E56001B815F /* Debug */,
@@ -328,7 +336,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1A912757207E6E56001B815F /* Build configuration list for PBXNativeTarget "FloatingAnalogues" */ = {
+		1A912757207E6E56001B815F /* Build configuration list for PBXNativeTarget "Sticks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1A912758207E6E56001B815F /* Debug */,
