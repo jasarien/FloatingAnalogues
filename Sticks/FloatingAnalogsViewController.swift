@@ -51,10 +51,9 @@ class FloatingAnalogsViewController: UIViewController, AnalogControlDelegate, UI
     
     var orientation = "Unknown"
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        determineOrientation()
+        determineOrientation(size: UIScreen.main.bounds.size)
         
         leftAnalogControl.delegate = self
         rightAnalogControl.delegate = self
@@ -82,23 +81,16 @@ class FloatingAnalogsViewController: UIViewController, AnalogControlDelegate, UI
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        switch orientation {
-        case "Landscape":
-            orientation = "Portrait"
-        case "Portrait":
-            orientation = "Landscape"
-        default:
-            break
-        }
+        determineOrientation(size: size)
     }
 
-    func determineOrientation() {
-        if ( UIScreen.main.bounds.width > UIScreen.main.bounds.height ) {
+    func determineOrientation(size: CGSize) {
+        if (size.width > size.height) {
             orientation = "Landscape"
         } else {
             orientation = "Portrait"
         }
-        print("Orientation: \(orientation)")
+        NSLog("Orientation: \(orientation)")
     }
     
     func analogControl(_ analogControl: AnalogControl, valueChanged value: CGPoint) {
