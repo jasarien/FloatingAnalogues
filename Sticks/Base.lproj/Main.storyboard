@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="snes-stretched-nonlinear-19.5-9-zelda" translatesAutoresizingMaskIntoConstraints="NO" id="rLI-Op-yLP" userLabel="Background">
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star wars dark forces" translatesAutoresizingMaskIntoConstraints="NO" id="rLI-Op-yLP" userLabel="Background">
                                 <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -48,43 +48,75 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0, 0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DH5-6I-yCA">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zO0-RJ-98o">
+                                <rect key="frame" x="406" y="0.0" width="406" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mQo-gv-YA6">
+                                <rect key="frame" x="-28" y="-25" width="406" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0, 0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DH5-6I-yCA" userLabel="Left Stick Coorinates Left Label">
                                 <rect key="frame" x="122" y="54" width="56.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0, 0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSj-jp-qOV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0, 0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSj-jp-qOV" userLabel="Right Stick Coordinates Label">
                                 <rect key="frame" x="634" y="54" width="56.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQo-gv-YA6">
-                                <rect key="frame" x="0.0" y="0.0" width="406" height="375"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zO0-RJ-98o">
-                                <rect key="frame" x="406" y="0.0" width="406" height="375"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNN-yk-Woy" userLabel="Quick Tap Left Gate Label">
+                                <rect key="frame" x="127" y="82" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJd-xn-Vkw" userLabel="Quick Tap Right Gate Label">
+                                <rect key="frame" x="639" y="82" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💥" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhN-N6-qPt" userLabel="HUD">
+                                <rect key="frame" x="484" y="109" width="52" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💥" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEH-AJ-AHZ" userLabel="HUD">
+                                <rect key="frame" x="257" y="109" width="52" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WTT-F0-LhW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="150" id="3CH-Ik-NF1"/>
                             <constraint firstItem="aSj-jp-qOV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="74P-e4-LXc"/>
+                            <constraint firstItem="DNN-yk-Woy" firstAttribute="top" secondItem="DH5-6I-yCA" secondAttribute="bottom" constant="7" id="9rw-HH-Fy6"/>
                             <constraint firstItem="mQo-gv-YA6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Az9-19-03d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jJd-xn-Vkw" secondAttribute="trailing" constant="127" id="C6f-XW-Kg9"/>
+                            <constraint firstItem="jJd-xn-Vkw" firstAttribute="top" secondItem="aSj-jp-qOV" secondAttribute="bottom" constant="7" id="DD8-oF-p8b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zO0-RJ-98o" secondAttribute="bottom" id="F7k-c5-QSN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NhN-N6-qPt" secondAttribute="trailing" constant="276" id="Kuf-He-Vhv"/>
                             <constraint firstAttribute="trailing" secondItem="4a4-0h-G9k" secondAttribute="centerX" constant="150" id="S8Z-2a-KsC" userLabel="Right AnalogX Constraint"/>
+                            <constraint firstItem="aEH-AJ-AHZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="109" id="UrE-Fk-Ey4"/>
                             <constraint firstItem="DH5-6I-yCA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="cDc-h8-d6A"/>
                             <constraint firstItem="mQo-gv-YA6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="dcF-bw-F9p"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aSj-jp-qOV" secondAttribute="trailing" constant="121.5" id="eoQ-VJ-coM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mQo-gv-YA6" secondAttribute="bottom" id="gWY-BX-bc2"/>
+                            <constraint firstItem="NhN-N6-qPt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="109" id="hNP-gk-G0L"/>
                             <constraint firstItem="DH5-6I-yCA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="122" id="hdL-Em-c9v"/>
                             <constraint firstItem="zO0-RJ-98o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="n6R-iR-l8A"/>
                             <constraint firstAttribute="bottom" secondItem="WTT-F0-LhW" secondAttribute="centerY" constant="150" id="nw0-nE-Yti" userLabel="Left AnalogY Constraint"/>
+                            <constraint firstItem="aEH-AJ-AHZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="257" id="o5g-Cw-okG"/>
                             <constraint firstItem="zO0-RJ-98o" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="oRc-rx-2hT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zO0-RJ-98o" secondAttribute="trailing" id="rNH-OD-5AQ"/>
+                            <constraint firstItem="DNN-yk-Woy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="tPZ-NL-Pin"/>
                             <constraint firstItem="mQo-gv-YA6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="trd-el-eTz"/>
                             <constraint firstAttribute="bottom" secondItem="4a4-0h-G9k" secondAttribute="centerY" constant="150" id="yaI-6t-r3i" userLabel="Right AnalogY Constraint"/>
                         </constraints>
@@ -96,18 +128,22 @@
                         <outlet property="leftAnalogControl" destination="WTT-F0-LhW" id="lJk-7H-Tsx"/>
                         <outlet property="leftAnalogXConstraint" destination="3CH-Ik-NF1" id="wmx-uI-Pxt"/>
                         <outlet property="leftAnalogYConstraint" destination="nw0-nE-Yti" id="uu4-fD-mGY"/>
+                        <outlet property="leftHUDLabel" destination="aEH-AJ-AHZ" id="d0e-qJ-kRY"/>
                         <outlet property="leftHalfView" destination="mQo-gv-YA6" id="NnP-ny-APu"/>
                         <outlet property="leftLabel" destination="DH5-6I-yCA" id="Tr6-tc-7jz"/>
+                        <outlet property="quickTapLeftGateLabel" destination="DNN-yk-Woy" id="jac-mF-EKQ"/>
+                        <outlet property="quickTapRightGateLabel" destination="jJd-xn-Vkw" id="Ysd-fk-wxz"/>
                         <outlet property="rightAnalogControl" destination="4a4-0h-G9k" id="RqJ-da-39k"/>
                         <outlet property="rightAnalogXConstraint" destination="S8Z-2a-KsC" id="zvT-kt-4Vg"/>
                         <outlet property="rightAnalogYConstraint" destination="yaI-6t-r3i" id="K3W-IX-eia"/>
+                        <outlet property="rightHUDLabel" destination="NhN-N6-qPt" id="M4e-cM-573"/>
                         <outlet property="rightHalfView" destination="zO0-RJ-98o" id="pnB-cq-r5S"/>
                         <outlet property="rightLabel" destination="aSj-jp-qOV" id="NhO-cy-vOu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33.733133433283363" y="16.800000000000001"/>
+            <point key="canvasLocation" x="33.283358320839582" y="16.800000000000001"/>
         </scene>
         <!--Controller-->
         <scene sceneID="ig4-ly-dh6">
@@ -399,5 +435,6 @@
     </scenes>
     <resources>
         <image name="snes-stretched-nonlinear-19.5-9-zelda" width="1559" height="720"/>
+        <image name="star wars dark forces" width="1136" height="720"/>
     </resources>
 </document>

@@ -3,6 +3,7 @@
 //  FloatingAnalogs
 //
 //  Created by James Addyman on 11/04/2018.
+//  Modified by Sev Gerk.
 //  Copyright © 2018 James Addyman. All rights reserved.
 //
 
@@ -12,8 +13,10 @@ class FloatingAnalogsViewController: UIViewController, AnalogControlDelegate, UI
     
     @IBOutlet var leftAnalogControl: AnalogControl!
     @IBOutlet weak var leftLabel: UILabel!
+    @IBOutlet weak var quickTapLeftGateLabel: UILabel!
     @IBOutlet var rightAnalogControl: AnalogControl!
     @IBOutlet weak var rightLabel: UILabel!
+    @IBOutlet weak var quickTapRightGateLabel: UILabel!
     
     @IBOutlet weak var leftAnalogXConstraint: NSLayoutConstraint!
     @IBOutlet weak var leftAnalogYConstraint: NSLayoutConstraint!
@@ -24,16 +27,34 @@ class FloatingAnalogsViewController: UIViewController, AnalogControlDelegate, UI
     @IBOutlet weak var leftHalfView: UIView!
     @IBOutlet weak var rightHalfView: UIView!
     
+    @IBOutlet weak var rightHUDLabel: UILabel!
+    @IBOutlet weak var leftHUDLabel: UILabel!
+    
     var hideLeftControlTimer: Timer?
     var hideRightControlTimer: Timer?
+    
+    var quickTapLeftGateTimer: Timer?
+    var quickTapLeftGateIsOpen = false
+    var quickTapRightGateTimer: Timer?
+    var quickTapRightGateIsOpen = false
+    let quickTapGateTimeLimit = 0.15
+    var quickTapLeftGateTimeRemaining = 0.00
+    var quickTapRightGateTimeRemaining = 0.00
+    
+    var rightAnalogIsActive = false
+    var leftAnalogIsActive = false
     
     var leftAnalogOriginalPosition: CGPoint!
     var rightAnalogOriginalPosition: CGPoint!
     var leftAnalogCurrentPosition: CGPoint!
     var rightAnalogCurrentPosition: CGPoint!
     
+    var orientation = "Unknown"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        determineOrientation()
         
         leftAnalogControl.delegate = self
         rightAnalogControl.delegate = self
@@ -57,10 +78,28 @@ class FloatingAnalogsViewController: UIViewController, AnalogControlDelegate, UI
         } else {
             // Fall back to other non 3D Touch features.
         }
-    
     }
     
-    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        switch orientation {
+        case "Landscape":
+            orientation = "Portrait"
+        case "Portrait":
+            orientation = "Landscape"
+        default:
+            break
+        }
+    }
+
+    func determineOrientation() {
+        if ( UIScreen.main.bounds.width > UIScreen.main.bounds.height ) {
+            orientation = "Landscape"
+        } else {
+            orientation = "Portrait"
+        }
+        print("Orientation: \(orientation)")
+    }
     
     func analogControl(_ analogControl: AnalogControl, valueChanged value: CGPoint) {
         switch analogControl {
@@ -79,6 +118,15 @@ class FloatingAnalogsViewController: UIViewController, AnalogControlDelegate, UI
             analogControl.transform = .identity
             analogControl.alpha = 1.0
         }, completion: nil)
+        switch analogControl {
+        case leftAnalogControl:
+            leftAnalogIsActive = true
+        case rightAnalogControl:
+            leftAnalogIsActive = true
+        default:
+            break
+        }
+
     }
     
     func hide(_ analogControl: AnalogControl) {
@@ -100,57 +148,195 @@ class FloatingAnalogsViewController: UIViewController, AnalogControlDelegate, UI
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
+        super.touchesBegan(touches, with: event)
+        
         if (touch.view == leftHalfView) {
-            print("Left Stick")
+            hideLeftControlTimer?.invalidate()
+            hideLeftControlTimer = nil
             
             leftAnalogOriginalPosition = touch.location(in: leftHalfView)
-            leftAnalogOriginalPosition.x = (leftAnalogOriginalPosition.x + leftAnalogControl.radius)
-            if !UIDevice.current.orientation.isLandscape {
-                leftAnalogOriginalPosition.x = (leftAnalogOriginalPosition.x - rightAnalogControl.radius)
-                leftAnalogOriginalPosition.y = (leftAnalogOriginalPosition.y + rightAnalogControl.radius)
+  
+            switch orientation {
+            case "Landscape":
+                leftAnalogOriginalPosition.x = (leftAnalogOriginalPosition.x + leftAnalogControl.radius)
+            case "Portrait":
+                leftAnalogOriginalPosition.y = (leftAnalogOriginalPosition.y + leftAnalogControl.radius)
+            default:
+                NSLog("Error: Can't Determine Stick Placement")
+                break
             }
+            
             leftAnalogCurrentPosition = leftAnalogOriginalPosition
             leftLabel.text = String(format: "(%.1f, %.1f) 0, 0", leftAnalogCurrentPosition.x, leftAnalogCurrentPosition.y)
             
-            hideLeftControlTimer?.invalidate()
-            hideLeftControlTimer = nil
-
             show(leftAnalogControl)
+            
             leftAnalogXConstraint.constant = leftAnalogCurrentPosition.x
             leftAnalogYConstraint.constant = view.bounds.size.height - leftAnalogCurrentPosition.y
-        } else if (touch.view == rightHalfView) {
-            print("Right Stick")
             
-            rightAnalogOriginalPosition = touch.location(in: rightHalfView)
-            rightAnalogOriginalPosition.x = (rightAnalogOriginalPosition.x - rightAnalogControl.radius)
-            if !UIDevice.current.orientation.isLandscape {
-                rightAnalogOriginalPosition.x = (rightAnalogOriginalPosition.x + rightAnalogControl.radius)
-                rightAnalogOriginalPosition.y = (rightAnalogOriginalPosition.y + rightAnalogControl.radius)
-            }
-            rightAnalogCurrentPosition = rightAnalogOriginalPosition
-            rightLabel.text = String(format: "(%.1f, %.1f) 0, 0", rightAnalogOriginalPosition.x, rightAnalogCurrentPosition.y)
+            checkForQuickTapLeft()
+    
+        } else if (touch.view == rightHalfView) {
             
             hideRightControlTimer?.invalidate()
             hideRightControlTimer = nil
+            
+            rightAnalogOriginalPosition = touch.location(in: rightHalfView)
+            
+            switch orientation {
+            case "Landscape":
+                rightAnalogOriginalPosition.x = (rightAnalogOriginalPosition.x - rightAnalogControl.radius)
+            case "Portrait":
+                rightAnalogOriginalPosition.y = (rightAnalogOriginalPosition.y + rightAnalogControl.radius)
+            default:
+                NSLog("Error: Can't Determine Stick Placement")
+                break
+            }
+
+            rightAnalogCurrentPosition = rightAnalogOriginalPosition
+            rightLabel.text = String(format: "(%.1f, %.1f) 0, 0", rightAnalogOriginalPosition.x, rightAnalogCurrentPosition.y)
 
             show(rightAnalogControl)
+            
             rightAnalogXConstraint.constant = rightHalfView.bounds.size.width - rightAnalogCurrentPosition.x
             rightAnalogYConstraint.constant = view.bounds.size.height - rightAnalogCurrentPosition.y
+            
+            checkForQuickTapRight()
         }
+        
         view.setNeedsLayout()
         view.layoutIfNeeded()
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
-        if (touch.view == leftHalfView) && (leftAnalogCurrentPosition == leftAnalogOriginalPosition) {
-            hide(leftAnalogControl)
-        } else if (touch.view == rightHalfView) && (rightAnalogCurrentPosition == rightAnalogOriginalPosition) {
-            hide(rightAnalogControl)
+        if (touch.view == leftHalfView) {
+            leftAnalogIsActive = false
+            if !quickTapLeftGateIsOpen { startQuickTapLeftTimer() }
+            //hideLeftControlTimer = Timer.scheduledTimer(withTimeInterval: quickTapLeftGateTimeRemaining, repeats: false) { [unowned self] timer in
+            if (self.leftAnalogCurrentPosition == self.leftAnalogOriginalPosition) && !self.leftAnalogIsActive{
+                self.hide(self.leftAnalogControl)
+            }
+            //}
+        } else if (touch.view == rightHalfView) {
+            rightAnalogIsActive = false
+            if !quickTapRightGateIsOpen { startQuickTapRightTimer() }
+            //hideRightControlTimer = Timer.scheduledTimer(withTimeInterval: quickTapRightGateTimeRemaining, repeats: false) { [unowned self] timer in
+            if (self.rightAnalogCurrentPosition == self.rightAnalogOriginalPosition) && !self.rightAnalogIsActive {
+                self.hide(self.rightAnalogControl)
+            }
+        }
+        //}
+    }
+    
+    func checkForQuickTapLeft() {
+        if quickTapLeftGateIsOpen {
+            resetQuickTapLeftTime()
+            leftHUDLabel.alpha = 1.0
+            flashScreen()
+            print("Left Stick: Quick Tap 💥")
+            // trigger the left quick tap mapped button
+        } else {
+            print("Left Stick: Tap")
+            stopQuickTapLeftTimer()
         }
     }
     
+    func checkForQuickTapRight() {
+        if quickTapRightGateIsOpen {
+            resetQuickTapRightTime()
+            rightHUDLabel.alpha = 1.0
+            flashScreen()
+            print("Right Stick: Quick Tap 💥")
+            // trigger the right quick tap mapped button
+        } else {
+            print("Right Stick: Tap")
+            stopQuickTapRightTimer()
+        }
+    }
+    
+    // FOR TESTING ONLY
+    func flashScreen() {
+        if let wnd = self.view{
 
+            let v = UIView(frame: wnd.bounds)
+            v.backgroundColor = UIColor.red
+            v.alpha = 0.2
+            wnd.addSubview(v)
+            UIView.animate(withDuration: 0.1, animations: {
+                v.alpha = 0.0
+                self.leftHUDLabel.alpha = 0.0
+                self.rightHUDLabel.alpha = 0.0
+            }, completion: {(finished:Bool) in
+                v.removeFromSuperview()
+            })
+        }
+    }
+    
+    func startQuickTapLeftTimer() {
+        quickTapLeftGateTimeRemaining = quickTapGateTimeLimit
+        quickTapLeftGateIsOpen = true
+        quickTapLeftGateLabel.textColor = UIColor.green
+        quickTapLeftGateTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: (#selector(FloatingAnalogsViewController.updateQuickTapLeftTimer)), userInfo: nil, repeats: true)
+
+    }
+
+    func startQuickTapRightTimer() {
+        quickTapRightGateTimeRemaining = quickTapGateTimeLimit
+        quickTapRightGateIsOpen = true
+        quickTapRightGateLabel.textColor = UIColor.green
+        quickTapRightGateTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: (#selector(FloatingAnalogsViewController.updateQuickTapRightTimer)), userInfo: nil, repeats: true)
+
+    }
+    
+    func resetQuickTapLeftTime() {
+        quickTapLeftGateTimeRemaining = quickTapGateTimeLimit
+    }
+    
+    func resetQuickTapRightTime() {
+        quickTapRightGateTimeRemaining = quickTapGateTimeLimit
+    }
+    
+    @objc func updateQuickTapLeftTimer() {
+        if quickTapLeftGateTimeRemaining > 0.00 {
+            quickTapLeftGateTimeRemaining -= 0.01
+        } else {
+            stopQuickTapLeftTimer()
+        }
+        let timeRemaining = Double(round(100 * quickTapLeftGateTimeRemaining) / 100)
+        quickTapLeftGateLabel.text = "\(timeRemaining)"
+    }
+    
+    @objc func updateQuickTapRightTimer() {
+        if quickTapRightGateTimeRemaining > 0.00 {
+            quickTapRightGateTimeRemaining -= 0.01
+        } else {
+            stopQuickTapRightTimer()
+        }
+        let timeRemaining = Double(round(100 * quickTapRightGateTimeRemaining) / 100)
+        quickTapRightGateLabel.text = "\(timeRemaining)"
+    }
+    
+    func stopQuickTapLeftTimer() {
+        quickTapLeftGateTimeRemaining = 0
+        quickTapLeftGateIsOpen = false
+        quickTapLeftGateLabel.textColor = UIColor.orange
+        //leftHUDLabel.alpha = 0.0
+        quickTapLeftGateTimer?.invalidate()
+        quickTapLeftGateTimer = nil
+    }
+    
+    func stopQuickTapRightTimer() {
+        quickTapRightGateTimeRemaining = 0
+        quickTapRightGateIsOpen = false
+        quickTapRightGateLabel.textColor = UIColor.orange
+        //rightHUDLabel.alpha = 0.0
+        quickTapRightGateTimer?.invalidate()
+        quickTapRightGateTimer = nil
+
+    }
+    
     @objc func leftPanRecognized(recognizer: UIPanGestureRecognizer) {
         leftAnalogCurrentPosition = recognizer.location(in: view)
         switch recognizer.state {
@@ -169,8 +355,12 @@ class FloatingAnalogsViewController: UIViewController, AnalogControlDelegate, UI
             view.setNeedsLayout()
             view.layoutIfNeeded()
             leftAnalogControl.panRecognized(recognizer)
+            
+            checkForQuickTapLeft()
         case .ended, .cancelled:
             leftAnalogControl.panRecognized(recognizer)
+            leftAnalogIsActive = false
+            if !quickTapLeftGateIsOpen { startQuickTapLeftTimer() }
             hideLeftControlTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [unowned self] timer in
                 self.hide(self.leftAnalogControl)
             }
@@ -197,8 +387,12 @@ class FloatingAnalogsViewController: UIViewController, AnalogControlDelegate, UI
             view.setNeedsLayout()
             view.layoutIfNeeded()
             rightAnalogControl.panRecognized(recognizer)
+            
+            checkForQuickTapRight()
         case .ended, .cancelled:
             rightAnalogControl.panRecognized(recognizer)
+            rightAnalogIsActive = false
+            if !quickTapRightGateIsOpen { startQuickTapRightTimer() }
             hideRightControlTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [unowned self] timer in
                 self.hide(self.rightAnalogControl)
             }
