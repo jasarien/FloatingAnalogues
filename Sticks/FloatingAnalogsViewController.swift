@@ -51,6 +51,8 @@ class FloatingAnalogsViewController: UIViewController, AnalogControlDelegate, UI
     
     var orientation = "Unknown"
     
+    var stick3DTouchIsEnabled: Bool!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         determineOrientation(size: UIScreen.main.bounds.size)
@@ -71,9 +73,9 @@ class FloatingAnalogsViewController: UIViewController, AnalogControlDelegate, UI
         leftAnalogControl.alpha = 0.0
         rightAnalogControl.alpha = 0.0
         
-        // Check the trait collection to see if force (3D Touch) is available.
+        // Check the trait collection to see if force (3D Touch) is available (for later experiments…)
         if self.traitCollection.forceTouchCapability == .available {
-            // Enable 3D Touch features
+            stick3DTouchIsEnabled = true
         } else {
             // Fall back to other non 3D Touch features.
         }
@@ -220,6 +222,22 @@ class FloatingAnalogsViewController: UIViewController, AnalogControlDelegate, UI
             }
         }
         //}
+    }
+ 
+    
+   // 3D touch setup… for later… -sev
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        let touch = touches.first!
+//        if stick3DTouchIsEnabled {
+//            stick3DTouch(touch: touch, control: leftAnalogControl)
+//        }
+    }
+
+    func stick3DTouch(touch: UITouch, control: AnalogControl) {
+//        control.transform = CGAffineTransform(scaleX: touch.force * 1, y: 0)
+        
+//        view.setNeedsLayout()
+//        view.layoutIfNeeded()
     }
     
     func checkForQuickTapLeft() {
@@ -397,13 +415,15 @@ class FloatingAnalogsViewController: UIViewController, AnalogControlDelegate, UI
         return true
     }
     
-    // Checking 3D Touch support
     
+    // Checking 3D Touch support (for later…) -sev
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         // Update the app's 3D Touch support.
         if self.traitCollection.forceTouchCapability == .available {
             // Enable 3D Touch features
+            stick3DTouchIsEnabled = true
         } else {
+            stick3DTouchIsEnabled = false
             // Fall back to other non 3D Touch features.
         }
     }

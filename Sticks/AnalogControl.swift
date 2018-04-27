@@ -57,7 +57,6 @@ class AnalogControl: UIView, UIGestureRecognizerDelegate {
         
         stickTrack = UIView(frame: .zero)
         stickTrack.translatesAutoresizingMaskIntoConstraints = false
-//        stickTrack.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
         
         // Add Blur Effect
         if !UIAccessibilityIsReduceTransparencyEnabled() {
@@ -78,6 +77,13 @@ class AnalogControl: UIView, UIGestureRecognizerDelegate {
         stick = UIView(frame: .zero)
         stick.translatesAutoresizingMaskIntoConstraints = false
         stick.backgroundColor = .white
+        // style settings for later… -sev
+//        stick.borderColor = .white
+//        stick.borderWidth = 3
+//        stick.shadowColor = .black
+//        stick.shadowRadius = 3
+//        stick.shadowOffset = CGSize(width: 0, height: 0)
+//        stick.shadowOpacity = 0.5
         
         addSubview(stickTrack)
         addSubview(stick)

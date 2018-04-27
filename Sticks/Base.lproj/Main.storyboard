@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina5_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -28,19 +28,19 @@
                                 </accessibility>
                             </imageView>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTT-F0-LhW" userLabel="Left Analog Control" customClass="AnalogControl" customModule="Sticks" customModuleProvider="target">
-                                <rect key="frame" x="100" y="175" width="100" height="100"/>
+                                <rect key="frame" x="94.666666666666686" y="169.66666666666666" width="111" height="110.99999999999997"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="TvY-Kl-quL"/>
-                                    <constraint firstAttribute="width" constant="100" id="W2d-qU-tAC"/>
+                                    <constraint firstAttribute="height" constant="111" id="TvY-Kl-quL"/>
+                                    <constraint firstAttribute="width" constant="111" id="W2d-qU-tAC"/>
                                 </constraints>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4a4-0h-G9k" userLabel="Right Analog Control" customClass="AnalogControl" customModule="Sticks" customModuleProvider="target">
-                                <rect key="frame" x="612" y="175" width="100" height="100"/>
+                                <rect key="frame" x="606.66666666666663" y="169.66666666666666" width="111" height="110.99999999999997"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="9oO-c9-o4G"/>
-                                    <constraint firstAttribute="height" constant="100" id="Nca-AE-Rrr"/>
+                                    <constraint firstAttribute="width" constant="111" id="9oO-c9-o4G"/>
+                                    <constraint firstAttribute="height" constant="111" id="Nca-AE-Rrr"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -49,45 +49,100 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zO0-RJ-98o">
-                                <rect key="frame" x="406" y="0.0" width="406" height="375"/>
+                                <rect key="frame" x="362" y="0.0" width="406" height="354"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mQo-gv-YA6">
                                 <rect key="frame" x="-28" y="-25" width="406" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0, 0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DH5-6I-yCA" userLabel="Left Stick Coorinates Left Label">
-                                <rect key="frame" x="122" y="54" width="56.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0, 0.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DH5-6I-yCA" userLabel="Left Stick Coorinates Left Label">
+                                <rect key="frame" x="108.00000000000001" y="44" width="56.666666666666671" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text=":00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNN-yk-Woy" userLabel="Quick Tap Left Gate Label">
+                                <rect key="frame" x="108" y="70" width="25.666666666666657" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0, 0.0 " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSj-jp-qOV" userLabel="Right Stick Coordinates Label">
+                                <rect key="frame" x="642" y="44" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text=":00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJd-xn-Vkw" userLabel="Quick Tap Right Gate Label">
+                                <rect key="frame" x="677.66666666666663" y="72" width="25.333333333333371" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="🚥" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fT-nx-CRW" userLabel="Quick Tap">
+                                <rect key="frame" x="708" y="72" width="23" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bO4-rr-1bq"/>
+                                    <constraint firstAttribute="width" constant="23" id="frR-EK-RmJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0, 0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSj-jp-qOV" userLabel="Right Stick Coordinates Label">
-                                <rect key="frame" x="634" y="54" width="56.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="⏺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pg4-k6-cti" userLabel="R Stick">
+                                <rect key="frame" x="708" y="44" width="23" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="1k1-6v-4ee"/>
+                                    <constraint firstAttribute="width" constant="23" id="A5L-uy-OAw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNN-yk-Woy" userLabel="Quick Tap Left Gate Label">
-                                <rect key="frame" x="127" y="82" width="46" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="🚥" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQ8-EW-Bau" userLabel="Quick Tap">
+                                <rect key="frame" x="81" y="70" width="23" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="vGT-eE-oPv"/>
+                                    <constraint firstAttribute="height" constant="21" id="vog-u8-W62"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJd-xn-Vkw" userLabel="Quick Tap Right Gate Label">
-                                <rect key="frame" x="639" y="82" width="46" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="⏺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtG-wW-Lrp" userLabel="R Stick">
+                                <rect key="frame" x="81" y="44" width="23" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7TI-Ww-phv"/>
+                                    <constraint firstAttribute="width" constant="23" id="y0v-yB-6gJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💥" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhN-N6-qPt" userLabel="HUD">
-                                <rect key="frame" x="484" y="109" width="52" height="58"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="💣" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEH-AJ-AHZ" userLabel="HUD">
+                                <rect key="frame" x="389" y="165" width="58" height="58"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💥" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEH-AJ-AHZ" userLabel="HUD">
-                                <rect key="frame" x="257" y="109" width="52" height="58"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="💥" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhN-N6-qPt" userLabel="HUD">
+                                <rect key="frame" x="389" y="165" width="58" height="58"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -95,35 +150,38 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="UQ8-EW-Bau" firstAttribute="top" secondItem="KtG-wW-Lrp" secondAttribute="bottom" constant="5" id="0Ey-yT-cjF"/>
                             <constraint firstItem="WTT-F0-LhW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="150" id="3CH-Ik-NF1"/>
-                            <constraint firstItem="aSj-jp-qOV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="74P-e4-LXc"/>
-                            <constraint firstItem="DNN-yk-Woy" firstAttribute="top" secondItem="DH5-6I-yCA" secondAttribute="bottom" constant="7" id="9rw-HH-Fy6"/>
+                            <constraint firstItem="UQ8-EW-Bau" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="9OC-zh-yNj"/>
                             <constraint firstItem="mQo-gv-YA6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Az9-19-03d"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jJd-xn-Vkw" secondAttribute="trailing" constant="127" id="C6f-XW-Kg9"/>
-                            <constraint firstItem="jJd-xn-Vkw" firstAttribute="top" secondItem="aSj-jp-qOV" secondAttribute="bottom" constant="7" id="DD8-oF-p8b"/>
+                            <constraint firstItem="DH5-6I-yCA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="BDh-jT-Yve"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zO0-RJ-98o" secondAttribute="bottom" id="F7k-c5-QSN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NhN-N6-qPt" secondAttribute="trailing" constant="276" id="Kuf-He-Vhv"/>
+                            <constraint firstItem="pg4-k6-cti" firstAttribute="leading" secondItem="aSj-jp-qOV" secondAttribute="trailing" constant="5" id="IRt-sE-9bh"/>
+                            <constraint firstItem="aSj-jp-qOV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="JIJ-pB-LTo"/>
+                            <constraint firstItem="pg4-k6-cti" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="Jbz-gA-knv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1fT-nx-CRW" secondAttribute="trailing" constant="37" id="KVv-45-n0B"/>
+                            <constraint firstItem="DNN-yk-Woy" firstAttribute="top" secondItem="DH5-6I-yCA" secondAttribute="bottom" constant="5" id="M2e-2Z-uVA"/>
+                            <constraint firstItem="jJd-xn-Vkw" firstAttribute="top" secondItem="aSj-jp-qOV" secondAttribute="bottom" constant="7" id="NW5-9g-Ri1"/>
                             <constraint firstAttribute="trailing" secondItem="4a4-0h-G9k" secondAttribute="centerX" constant="150" id="S8Z-2a-KsC" userLabel="Right AnalogX Constraint"/>
-                            <constraint firstItem="aEH-AJ-AHZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="109" id="UrE-Fk-Ey4"/>
-                            <constraint firstItem="DH5-6I-yCA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="cDc-h8-d6A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pg4-k6-cti" secondAttribute="trailing" constant="37" id="XQP-Fu-VXt"/>
+                            <constraint firstItem="KtG-wW-Lrp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="cIt-tT-tHd"/>
+                            <constraint firstItem="DH5-6I-yCA" firstAttribute="leading" secondItem="KtG-wW-Lrp" secondAttribute="trailing" constant="4" id="cuU-kc-bNl"/>
                             <constraint firstItem="mQo-gv-YA6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="dcF-bw-F9p"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aSj-jp-qOV" secondAttribute="trailing" constant="121.5" id="eoQ-VJ-coM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mQo-gv-YA6" secondAttribute="bottom" id="gWY-BX-bc2"/>
-                            <constraint firstItem="NhN-N6-qPt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="109" id="hNP-gk-G0L"/>
-                            <constraint firstItem="DH5-6I-yCA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="122" id="hdL-Em-c9v"/>
+                            <constraint firstItem="DNN-yk-Woy" firstAttribute="leading" secondItem="UQ8-EW-Bau" secondAttribute="trailing" constant="4" id="hSn-CA-BGx"/>
+                            <constraint firstItem="KtG-wW-Lrp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="hoC-FP-3Dc"/>
+                            <constraint firstItem="1fT-nx-CRW" firstAttribute="top" secondItem="pg4-k6-cti" secondAttribute="bottom" constant="7" id="kCT-ml-yEY"/>
                             <constraint firstItem="zO0-RJ-98o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="n6R-iR-l8A"/>
                             <constraint firstAttribute="bottom" secondItem="WTT-F0-LhW" secondAttribute="centerY" constant="150" id="nw0-nE-Yti" userLabel="Left AnalogY Constraint"/>
-                            <constraint firstItem="aEH-AJ-AHZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="257" id="o5g-Cw-okG"/>
                             <constraint firstItem="zO0-RJ-98o" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="oRc-rx-2hT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zO0-RJ-98o" secondAttribute="trailing" id="rNH-OD-5AQ"/>
-                            <constraint firstItem="DNN-yk-Woy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="tPZ-NL-Pin"/>
                             <constraint firstItem="mQo-gv-YA6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="trd-el-eTz"/>
+                            <constraint firstItem="1fT-nx-CRW" firstAttribute="leading" secondItem="jJd-xn-Vkw" secondAttribute="trailing" constant="5" id="uV8-C2-vIY"/>
                             <constraint firstAttribute="bottom" secondItem="4a4-0h-G9k" secondAttribute="centerY" constant="150" id="yaI-6t-r3i" userLabel="Right AnalogY Constraint"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <toolbarItems/>
-                    <size key="freeformSize" width="812" height="375"/>
                     <connections>
                         <outlet property="leftAnalogControl" destination="WTT-F0-LhW" id="lJk-7H-Tsx"/>
                         <outlet property="leftAnalogXConstraint" destination="3CH-Ik-NF1" id="wmx-uI-Pxt"/>
@@ -153,7 +211,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="snes-stretched-nonlinear-19.5-9-zelda" translatesAutoresizingMaskIntoConstraints="NO" id="VHW-eV-vcn" userLabel="Background">
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ff7-battle" translatesAutoresizingMaskIntoConstraints="NO" id="VHW-eV-vcn" userLabel="Background">
                                 <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -167,7 +225,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ce-mi-Yfd" customClass="DesignableButton">
                                         <rect key="frame" x="47" y="-1" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Y">
+                                        <state key="normal" title="▵">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -189,7 +247,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8st-sW-mZe" customClass="DesignableButton">
                                         <rect key="frame" x="47" y="97" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <state key="normal" title="A">
+                                        <state key="normal" title="✕">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -211,7 +269,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B14-zC-Rvh" customClass="DesignableButton" customModule="Sticks" customModuleProvider="target">
                                         <rect key="frame" x="95" y="48" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="B">
+                                        <state key="normal" title="○">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -233,7 +291,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKX-dJ-p7J" customClass="DesignableButton">
                                         <rect key="frame" x="-1" y="48" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="X">
+                                        <state key="normal" title="□">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -256,12 +314,12 @@
                                 <viewLayoutGuide key="safeArea" id="I7R-7A-Kiz"/>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Yu-tp-XdW" userLabel="Right Triggers">
-                                <rect key="frame" x="716" y="83" width="76" height="96"/>
+                                <rect key="frame" x="716" y="40" width="64" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzW-rX-qU3" customClass="DesignableButton">
-                                        <rect key="frame" x="10" y="3" width="54" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="4" y="55" width="54" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="R2">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -285,8 +343,8 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJQ-fh-Dnc" customClass="DesignableButton" customModule="Sticks" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="52" width="54" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="4" y="104" width="54" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="R1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -309,6 +367,31 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSn-Kb-VfZ" customClass="DesignableButton">
+                                        <rect key="frame" x="4" y="6" width="54" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="R3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
@@ -426,7 +509,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="YpF-7s-zPK"/>
                     </view>
-                    <size key="freeformSize" width="812" height="375"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QuO-W6-w3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -434,7 +516,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="snes-stretched-nonlinear-19.5-9-zelda" width="1559" height="720"/>
+        <image name="ff7-battle" width="1280" height="856"/>
         <image name="star wars dark forces" width="1136" height="720"/>
     </resources>
 </document>
